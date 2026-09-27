@@ -1,5 +1,3 @@
-# main.py
-
 from result import add_student, search_student, view_students
 from storage import load_students, save_students
 
