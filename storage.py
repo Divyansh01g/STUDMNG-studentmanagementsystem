@@ -1,5 +1,3 @@
-# storage.py
-
 from result import students
 
 def save_students():
