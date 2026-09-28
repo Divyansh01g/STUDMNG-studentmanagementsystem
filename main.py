@@ -1,6 +1,7 @@
+# main.py
+
 from result import add_student, search_student, view_students
 from storage import load_students, save_students
-
 
 load_students()
 
@@ -18,16 +19,16 @@ while True:
 
         name = input("Enter student name: ")
 
-        mark1 = int(input("Enter marks for Subject 1: "))
-        mark2 = int(input("Enter marks for Subject 2: "))
-        mark3 = int(input("Enter marks for Subject 3: "))
+        m1 = int(input("Subject 1 Marks: "))
+        m2 = int(input("Subject 2 Marks: "))
+        m3 = int(input("Subject 3 Marks: "))
 
-        marks = [mark1, mark2, mark3]
+        marks = [m1, m2, m3]
 
         add_student(name, marks)
         save_students()
 
-        print("Student result saved successfully.")
+        print("Student added successfully!")
 
     elif choice == "2":
 
@@ -41,7 +42,6 @@ while True:
             print("Total:", result["total"])
             print("Percentage:", result["percentage"])
             print("Grade:", result["grade"])
-
         else:
             print("Student not found.")
 
@@ -50,11 +50,9 @@ while True:
         data = view_students()
 
         if len(data) == 0:
-            print("No student records found.")
+            print("No records available.")
 
         else:
-            print("\n----- Student Records -----")
-
             for name, result in data.items():
                 print("\nName:", name)
                 print("Marks:", result["marks"])
@@ -63,8 +61,7 @@ while True:
                 print("Grade:", result["grade"])
 
     elif choice == "4":
-
-        print("Thank you for using the Student Result Management System!")
+        print("Thank you!")
         break
 
     else:
