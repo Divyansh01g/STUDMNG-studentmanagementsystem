@@ -1,5 +1,6 @@
 students = {}
 
+
 def calculate_result(marks):
     total = sum(marks)
     percentage = total / len(marks)
