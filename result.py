@@ -1,9 +1,8 @@
 students = {}
 
-
 def calculate_result(marks):
-    total = sum(marks)
-    percentage = total / len(marks)
+    total = marks[0] + marks[1] + marks[2]
+    percentage = total / 3
 
     if percentage >= 90:
         grade = "A+"
@@ -20,7 +19,6 @@ def calculate_result(marks):
 
     return total, percentage, grade
 
-
 def add_student(name, marks):
     total, percentage, grade = calculate_result(marks)
 
@@ -31,10 +29,8 @@ def add_student(name, marks):
         "grade": grade
     }
 
-
 def search_student(name):
     return students.get(name)
-
 
 def view_students():
     return students
