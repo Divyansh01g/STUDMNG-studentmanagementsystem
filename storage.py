@@ -6,15 +6,11 @@ def save_students():
 
     for name, data in students.items():
         marks = data["marks"]
-        percentage = data["percentage"]
-        grade = data["grade"]
 
         file.write(name + ",")
         file.write(str(marks[0]) + ",")
         file.write(str(marks[1]) + ",")
-        file.write(str(marks[2]) + ",")
-        file.write(str(percentage) + ",")
-        file.write(grade + "\n")
+        file.write(str(marks[2]) + "\n")
 
     file.close()
 
@@ -25,7 +21,7 @@ def load_students():
     for line in file:
         data = line.strip().split(",")
 
-        if len(data) == 6:
+        if len(data) == 4:
             name = data[0]
 
             marks = [
@@ -34,11 +30,12 @@ def load_students():
                 int(data[3])
             ]
 
-            percentage = float(data[4])
-            grade = data[5]
+            # Calculate the result again
+            total, percentage, grade = calculate_result(marks)
 
             students[name] = {
                 "marks": marks,
+                "total": total,
                 "percentage": percentage,
                 "grade": grade
             }
