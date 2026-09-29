@@ -49,6 +49,8 @@ The project is developed using basic Python concepts covered in the VITyarthi Py
 3. Open the terminal in the project folder.
 4. Run: `python main.py`
 5. Select an option from the menu.
+6. if error occurs then type cd "STUDMNG-studentmanagementsystem" in terminal.
+7. then type python main.py to run the program
 
 ## How It Works
 
