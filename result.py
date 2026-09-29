@@ -1,5 +1,7 @@
 students = {}
 
+
+
 def calculate_result(marks):
     total = marks[0] + marks[1] + marks[2]
     percentage = total / 3
@@ -19,16 +21,15 @@ def calculate_result(marks):
 
     return total, percentage, grade
 
+
 def add_student(name, marks):
     total, percentage, grade = calculate_result(marks)
-
     students[name] = {
         "marks": marks,
         "total": total,
         "percentage": percentage,
         "grade": grade
     }
-
 def search_student(name):
     return students.get(name)
 
