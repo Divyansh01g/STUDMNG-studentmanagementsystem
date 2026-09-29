@@ -2,15 +2,15 @@ from result import students, calculate_result
 
 def save_students():
     file = open("students.txt", "w")
-
     for name, data in students.items():
         marks = data["marks"]
         file.write(name + "," +
                    str(marks[0]) + "," +
                    str(marks[1]) + "," +
                    str(marks[2]) + "\n")
-
     file.close()
+
+
 
 def load_students():
     file = open("students.txt", "a+")
@@ -31,5 +31,4 @@ def load_students():
                 "percentage": percentage,
                 "grade": grade
             }
-
     file.close()
